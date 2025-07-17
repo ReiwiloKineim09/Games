@@ -1,1 +1,50 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess in JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="board"></div>
+        <div id="info-panel">
+            <div id="status">White to move</div>
+            <div id="timers-container">
+                <div id="black-timer" class="timer">05:00</div>
+                <div id="white-timer" class="timer">05:00</div>
+            </div>
+            <div id="difficulty-selector">
+                <label for="difficulty">Difficulty level:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="2">Easy (depth 2)</option>
+                    <option value="3" selected>Medium (depth 3)</option>
+                    <option value="4">Hard (depth 4)</option>
+                </select>
+            </div>
+            <div id="time-control-selector">
+                <label for="time-control">Game mode (time):</label>
+                <select id="time-control" name="time-control">
+                    <option value="5_0">Blitz 5 min</option>
+                    <option value="5_3" selected>Blitz 5|3</option>
+                    <option value="10_0">Rapid 10 min</option>
+                    <option value="10_5">Rapid 10|5</option>
+                    <option value="99_0">No limit</option>
+                </select>
+            </div>
+            <div id="move-history-container">
+                <h3>Move history:</h3>
+                <ul id="move-history"></ul>
+            </div>
+            <div class="action-buttons">
+                <button id="undo-button" disabled>Undo</button>
+                <button id="redo-button" disabled>Redo</button>
+                <button id="hint-button">Hinter</button>
+            </div>
+            <button id="new-game-button">New Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
