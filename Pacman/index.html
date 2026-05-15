@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neo Pac-Man</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud glass">
+        <div>
+          <p class="label">Wynik</p>
+          <p id="score" class="value">0</p>
+        </div>
+        <div>
+          <p class="label">Życia</p>
+          <p id="lives" class="value">3</p>
+        </div>
+        <div>
+          <p class="label">Najlepszy</p>
+          <p id="best" class="value">0</p>
+        </div>
+      </header>
+
+      <section class="board-wrap glass">
+        <canvas id="game" width="560" height="560" aria-label="Gra pac-man"></canvas>
+      </section>
+
+      <section class="controls glass">
+        <p>Sterowanie: <strong>WASD</strong> lub <strong>strzałki</strong>.</p>
+        <button id="restart">Nowa gra</button>
+      </section>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="panel glass">
+          <h1 id="overlay-title">Neo Pac-Man</h1>
+          <p id="overlay-message">Naciśnij Enter, aby zacząć.</p>
+          <button id="start">Start</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

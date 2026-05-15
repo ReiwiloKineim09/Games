@@ -1,0 +1,132 @@
+:root {
+  --bg-1: #060816;
+  --bg-2: #120b2f;
+  --glass: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.18);
+  --text: #ebf0ff;
+  --muted: #a8b3d8;
+  --accent: #5cf5ff;
+  --accent-2: #ff47d1;
+  --warn: #ffd45c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 15%, #3620a2 0%, transparent 30%),
+    radial-gradient(circle at 85% 20%, #0d7fd7 0%, transparent 30%),
+    linear-gradient(150deg, var(--bg-1), var(--bg-2));
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(960px, 100vw - 2rem);
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  padding: 1rem 0 2rem;
+}
+
+.glass {
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  text-align: center;
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.value {
+  margin: 0.2rem 0 0;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.board-wrap {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  width: min(90vw, 560px);
+  height: min(90vw, 560px);
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 25px rgba(92, 245, 255, 0.18);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #060816;
+  font-weight: 800;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 4, 15, 0.65);
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.panel {
+  text-align: center;
+  padding: 2rem;
+  max-width: 360px;
+}
+
+.panel h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.panel p {
+  color: var(--muted);
+  margin: 0.8rem 0 1.5rem;
+}
